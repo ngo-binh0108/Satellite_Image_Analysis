@@ -12,4 +12,3 @@ pyinstaller
 # developer scripts only (scripts/make_samples.py, scripts/validate.py):
 httpx
 pyproj
-shapely
