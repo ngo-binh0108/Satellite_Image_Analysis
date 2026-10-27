@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- EarthView package locations (edit here if your packages folder is elsewhere) -->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <PackagesDir>D:\KJS_02\work\Stable Diffusion\ALPR\packages\</PackagesDir>
+    <QtDir>$(PackagesDir)qt\5.15.2\msvc2019_64\</QtDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <BuildMacro Include="QtDir"><Value>$(QtDir)</Value></BuildMacro>
+  </ItemGroup>
+</Project>

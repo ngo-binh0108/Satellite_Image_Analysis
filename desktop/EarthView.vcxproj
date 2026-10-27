@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- EarthView - Satellite Image Analysis desktop app for Visual Studio 2019 or later (v142 toolset, Qt 5.15.2).
+     Package locations are in EarthView.props. The CMake build (build.bat) uses the same sources. -->
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{3D8B1F64-7C2A-4E5D-B9A1-5F0C6E2D8A47}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>EarthView</RootNamespace>
+    <ProjectName>EarthView</ProjectName>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="EarthView.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <OutDir>$(ProjectDir)bin\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Configuration)\</IntDir>
+    <TargetName>EarthView</TargetName>
+    <LocalDebuggerWorkingDirectory>$(OutDir)</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;_WIN64;NOMINMAX;WIN32_LEAN_AND_MEAN;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NETWORK_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(QtDir)include;$(QtDir)include\QtCore;$(QtDir)include\QtGui;$(QtDir)include\QtWidgets;$(QtDir)include\QtNetwork;$(QtDir)mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 /Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(QtDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;Qt5Networkd.lib;qtmaind.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Message>Deploying the Qt runtime and plugins</Message>
+      <Command>set "PATH=$(QtDir)bin;%SystemRoot%\System32"
+"$(QtDir)bin\windeployqt.exe" --no-translations --no-system-d3d-compiler --no-opengl-sw --debug "$(TargetPath)" &gt;nul</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;_WIN64;NOMINMAX;WIN32_LEAN_AND_MEAN;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NETWORK_LIB;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)src;$(QtDir)include;$(QtDir)include\QtCore;$(QtDir)include\QtGui;$(QtDir)include\QtWidgets;$(QtDir)include\QtNetwork;$(QtDir)mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 /Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(QtDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;Qt5Network.lib;qtmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Message>Deploying the Qt runtime and plugins</Message>
+      <Command>set "PATH=$(QtDir)bin;%SystemRoot%\System32"
+"$(QtDir)bin\windeployqt.exe" --no-translations --no-system-d3d-compiler --no-opengl-sw --release "$(TargetPath)" &gt;nul</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Backend.cpp" />
+    <ClCompile Include="src\MapWidget.cpp" />
+    <ClCompile Include="src\Charts.cpp" />
+    <ClCompile Include="src\MainWindow.cpp" />
+    <ClCompile Include="src\MainWindowPages.cpp" />
+    <ClCompile Include="src\LoginDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup Label="Generated by moc">
+    <ClCompile Include="$(IntDir)moc\moc_Backend.cpp" />
+    <ClCompile Include="$(IntDir)moc\moc_MapWidget.cpp" />
+    <ClCompile Include="$(IntDir)moc\moc_Charts.cpp" />
+    <ClCompile Include="$(IntDir)moc\moc_MainWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Theme.h" />
+    <ClInclude Include="src\UiHelpers.h" />
+    <ClInclude Include="src\LoginDialog.h" />
+  </ItemGroup>
+  <ItemGroup Label="Qt moc">
+    <CustomBuild Include="src\Backend.h">
+      <Message>moc %(Filename)%(Extension)</Message>
+      <Command>if not exist "$(IntDir)moc" mkdir "$(IntDir)moc"
+"$(QtDir)bin\moc.exe" -DUNICODE -D_UNICODE -DWIN32 -D_WIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NETWORK_LIB -D_MSC_VER=1929 "-I$(ProjectDir)src" "-I$(QtDir)include" "-I$(QtDir)include\QtCore" "-I$(QtDir)include\QtGui" "-I$(QtDir)include\QtWidgets" "-I$(QtDir)include\QtNetwork" "%(FullPath)" -o "$(IntDir)moc\moc_%(Filename).cpp"</Command>
+      <Outputs>$(IntDir)moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs>$(QtDir)bin\moc.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\MapWidget.h">
+      <Message>moc %(Filename)%(Extension)</Message>
+      <Command>if not exist "$(IntDir)moc" mkdir "$(IntDir)moc"
+"$(QtDir)bin\moc.exe" -DUNICODE -D_UNICODE -DWIN32 -D_WIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NETWORK_LIB -D_MSC_VER=1929 "-I$(ProjectDir)src" "-I$(QtDir)include" "-I$(QtDir)include\QtCore" "-I$(QtDir)include\QtGui" "-I$(QtDir)include\QtWidgets" "-I$(QtDir)include\QtNetwork" "%(FullPath)" -o "$(IntDir)moc\moc_%(Filename).cpp"</Command>
+      <Outputs>$(IntDir)moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs>$(QtDir)bin\moc.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\Charts.h">
+      <Message>moc %(Filename)%(Extension)</Message>
+      <Command>if not exist "$(IntDir)moc" mkdir "$(IntDir)moc"
+"$(QtDir)bin\moc.exe" -DUNICODE -D_UNICODE -DWIN32 -D_WIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NETWORK_LIB -D_MSC_VER=1929 "-I$(ProjectDir)src" "-I$(QtDir)include" "-I$(QtDir)include\QtCore" "-I$(QtDir)include\QtGui" "-I$(QtDir)include\QtWidgets" "-I$(QtDir)include\QtNetwork" "%(FullPath)" -o "$(IntDir)moc\moc_%(Filename).cpp"</Command>
+      <Outputs>$(IntDir)moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs>$(QtDir)bin\moc.exe</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="src\MainWindow.h">
+      <Message>moc %(Filename)%(Extension)</Message>
+      <Command>if not exist "$(IntDir)moc" mkdir "$(IntDir)moc"
+"$(QtDir)bin\moc.exe" -DUNICODE -D_UNICODE -DWIN32 -D_WIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NETWORK_LIB -D_MSC_VER=1929 "-I$(ProjectDir)src" "-I$(QtDir)include" "-I$(QtDir)include\QtCore" "-I$(QtDir)include\QtGui" "-I$(QtDir)include\QtWidgets" "-I$(QtDir)include\QtNetwork" "%(FullPath)" -o "$(IntDir)moc\moc_%(Filename).cpp"</Command>
+      <Outputs>$(IntDir)moc\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs>$(QtDir)bin\moc.exe</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EarthView.props" />
+    <None Include="CMakeLists.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
