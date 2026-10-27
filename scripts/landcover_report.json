@@ -1,0 +1,280 @@
+{
+ "train_scenes": [
+  "Seoul 2026-06-15",
+  "Cairo 2026-08-27",
+  "Cairo 2026-08-10",
+  "Manaus 2026-08-26",
+  "Manaus 2026-08-09",
+  "Berlin 2026-08-27",
+  "Berlin 2026-06-26",
+  "Punjab 2026-06-10",
+  "Punjab 2026-07-15",
+  "Sao Paulo 2025-12-11",
+  "Sao Paulo 2025-12-28",
+  "Sydney 2026-01-28",
+  "Sydney 2026-01-08",
+  "Texas 2026-08-26",
+  "Texas 2026-08-16",
+  "Zaragoza 2026-08-30",
+  "Zaragoza 2026-08-19",
+  "Java 2026-07-16",
+  "Java 2026-08-02",
+  "Hokkaido 2026-08-06",
+  "Lagos 2026-01-24",
+  "Paris 2026-08-12",
+  "Paris 2026-07-28",
+  "Kyiv 2026-08-06",
+  "Kyiv 2026-08-16",
+  "Beijing 2026-07-15",
+  "Beijing 2026-06-22",
+  "Bangkok 2026-01-12",
+  "Bangkok 2025-12-21",
+  "Melbourne 2026-02-20",
+  "Melbourne 2026-02-03",
+  "Mexico City 2026-02-24",
+  "Mexico City 2026-02-09",
+  "Riyadh 2026-07-23",
+  "Riyadh 2026-07-13",
+  "Toronto 2026-08-05",
+  "Toronto 2026-07-19",
+  "Rome 2026-08-14",
+  "Rome 2026-08-04"
+ ],
+ "holdout_scenes": [
+  "Geneva 2026-07-24",
+  "Geneva 2026-07-05",
+  "Iowa 2026-08-08",
+  "Iowa 2026-07-14",
+  "Da Nang 2026-06-20",
+  "Da Nang 2026-06-02",
+  "Nairobi 2026-08-12",
+  "Nairobi 2026-07-03",
+  "Buenos Aires 2026-02-06",
+  "Buenos Aires 2026-01-17"
+ ],
+ "schemes": {
+  "5class": {
+   "6band": {
+    "train_pixels": 563031,
+    "holdout_pixels": 200000,
+    "holdout_accuracy": 0.723,
+    "holdout_accuracy_by_site": {
+     "Buenos Aires": 0.715,
+     "Da Nang": 0.741,
+     "Geneva": 0.753,
+     "Iowa": 0.658,
+     "Nairobi": 0.749
+    },
+    "per_class": {
+     "Forest": {
+      "reference_pixels": 39816,
+      "recall": 0.628,
+      "precision": 0.593
+     },
+     "Farmland / grassland": {
+      "reference_pixels": 70785,
+      "recall": 0.757,
+      "precision": 0.688
+     },
+     "Urban / built-up": {
+      "reference_pixels": 62614,
+      "recall": 0.651,
+      "precision": 0.924
+     },
+     "Bare / sparse": {
+      "reference_pixels": 1479,
+      "recall": 0.314,
+      "precision": 0.047
+     },
+     "Water": {
+      "reference_pixels": 25306,
+      "recall": 0.984,
+      "precision": 0.956
+     }
+    }
+   },
+   "4band": {
+    "train_pixels": 563031,
+    "holdout_pixels": 200000,
+    "holdout_accuracy": 0.636,
+    "holdout_accuracy_by_site": {
+     "Buenos Aires": 0.584,
+     "Da Nang": 0.687,
+     "Geneva": 0.753,
+     "Iowa": 0.517,
+     "Nairobi": 0.641
+    },
+    "per_class": {
+     "Forest": {
+      "reference_pixels": 39816,
+      "recall": 0.57,
+      "precision": 0.511
+     },
+     "Farmland / grassland": {
+      "reference_pixels": 70785,
+      "recall": 0.661,
+      "precision": 0.584
+     },
+     "Urban / built-up": {
+      "reference_pixels": 62614,
+      "recall": 0.517,
+      "precision": 0.904
+     },
+     "Bare / sparse": {
+      "reference_pixels": 1479,
+      "recall": 0.338,
+      "precision": 0.038
+     },
+     "Water": {
+      "reference_pixels": 25306,
+      "recall": 0.987,
+      "precision": 0.946
+     }
+    }
+   },
+   "rgb": {
+    "train_pixels": 563031,
+    "holdout_pixels": 200000,
+    "holdout_accuracy": 0.563,
+    "holdout_accuracy_by_site": {
+     "Buenos Aires": 0.703,
+     "Da Nang": 0.581,
+     "Geneva": 0.576,
+     "Iowa": 0.395,
+     "Nairobi": 0.56
+    },
+    "per_class": {
+     "Forest": {
+      "reference_pixels": 39816,
+      "recall": 0.296,
+      "precision": 0.555
+     },
+     "Farmland / grassland": {
+      "reference_pixels": 70785,
+      "recall": 0.604,
+      "precision": 0.52
+     },
+     "Urban / built-up": {
+      "reference_pixels": 62614,
+      "recall": 0.566,
+      "precision": 0.902
+     },
+     "Bare / sparse": {
+      "reference_pixels": 1479,
+      "recall": 0.554,
+      "precision": 0.044
+     },
+     "Water": {
+      "reference_pixels": 25306,
+      "recall": 0.861,
+      "precision": 0.565
+     }
+    }
+   }
+  },
+  "4class": {
+   "6band": {
+    "train_pixels": 483564,
+    "holdout_pixels": 198521,
+    "holdout_accuracy": 0.761,
+    "holdout_accuracy_by_site": {
+     "Buenos Aires": 0.819,
+     "Da Nang": 0.791,
+     "Geneva": 0.773,
+     "Iowa": 0.646,
+     "Nairobi": 0.779
+    },
+    "per_class": {
+     "Forest": {
+      "reference_pixels": 39816,
+      "recall": 0.634,
+      "precision": 0.586
+     },
+     "Farmland / grassland": {
+      "reference_pixels": 70785,
+      "recall": 0.758,
+      "precision": 0.685
+     },
+     "Urban / built-up": {
+      "reference_pixels": 62614,
+      "recall": 0.755,
+      "precision": 0.928
+     },
+     "Water": {
+      "reference_pixels": 25306,
+      "recall": 0.986,
+      "precision": 0.957
+     }
+    }
+   },
+   "4band": {
+    "train_pixels": 483564,
+    "holdout_pixels": 198521,
+    "holdout_accuracy": 0.687,
+    "holdout_accuracy_by_site": {
+     "Buenos Aires": 0.711,
+     "Da Nang": 0.755,
+     "Geneva": 0.765,
+     "Iowa": 0.516,
+     "Nairobi": 0.69
+    },
+    "per_class": {
+     "Forest": {
+      "reference_pixels": 39816,
+      "recall": 0.571,
+      "precision": 0.509
+     },
+     "Farmland / grassland": {
+      "reference_pixels": 70785,
+      "recall": 0.668,
+      "precision": 0.574
+     },
+     "Urban / built-up": {
+      "reference_pixels": 62614,
+      "recall": 0.662,
+      "precision": 0.917
+     },
+     "Water": {
+      "reference_pixels": 25306,
+      "recall": 0.988,
+      "precision": 0.948
+     }
+    }
+   },
+   "rgb": {
+    "train_pixels": 483564,
+    "holdout_pixels": 198521,
+    "holdout_accuracy": 0.616,
+    "holdout_accuracy_by_site": {
+     "Buenos Aires": 0.721,
+     "Da Nang": 0.694,
+     "Geneva": 0.657,
+     "Iowa": 0.41,
+     "Nairobi": 0.601
+    },
+    "per_class": {
+     "Forest": {
+      "reference_pixels": 39816,
+      "recall": 0.291,
+      "precision": 0.538
+     },
+     "Farmland / grassland": {
+      "reference_pixels": 70785,
+      "recall": 0.666,
+      "precision": 0.521
+     },
+     "Urban / built-up": {
+      "reference_pixels": 62614,
+      "recall": 0.67,
+      "precision": 0.887
+     },
+     "Water": {
+      "reference_pixels": 25306,
+      "recall": 0.856,
+      "precision": 0.551
+     }
+    }
+   }
+  }
+ }
+}
