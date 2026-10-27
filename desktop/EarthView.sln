@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EarthView", "EarthView.vcxproj", "{3D8B1F64-7C2A-4E5D-B9A1-5F0C6E2D8A47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D8B1F64-7C2A-4E5D-B9A1-5F0C6E2D8A47}.Debug|x64.ActiveCfg = Debug|x64
+		{3D8B1F64-7C2A-4E5D-B9A1-5F0C6E2D8A47}.Debug|x64.Build.0 = Debug|x64
+		{3D8B1F64-7C2A-4E5D-B9A1-5F0C6E2D8A47}.Release|x64.ActiveCfg = Release|x64
+		{3D8B1F64-7C2A-4E5D-B9A1-5F0C6E2D8A47}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1C4E7B2-5D38-4F6A-9B0E-7C2D4F6A8E13}
+	EndGlobalSection
+EndGlobal
