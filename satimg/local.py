@@ -224,7 +224,7 @@ def make_view(image: LocalImage, window: str | None, max_px: int) -> View:
 
 def view_transform(image: LocalImage, view: View) -> Affine:
     c0, r0, c1, r1 = view.window
-    return image.transform * Affine.translation(c0, r0) * Affine.scale((c1 - c0) / view.width, (r1 - r0) / view.height)
+    return image.transform @ Affine.translation(c0, r0) @ Affine.scale((c1 - c0) / view.width, (r1 - r0) / view.height)
 
 
 @lru_cache(maxsize=160)
@@ -289,6 +289,6 @@ def read_roles(image: LocalImage, roles: tuple, view: View, purpose: str = "This
 def lonlat_of(image: LocalImage, col: float, row: float) -> tuple[float, float] | None:
     if not image.georeferenced:
         return None
-    x, y = image.transform * (col, row)
+    x, y = image.transform @ (col, row)
     lons, lats = warp_points(image.crs, "EPSG:4326", [x], [y])
     return round(lons[0], 6), round(lats[0], 6)
