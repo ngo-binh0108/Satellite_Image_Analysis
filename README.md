@@ -1,5 +1,7 @@
 # EarthView AI – Satellite Image Analysis
 
+[![tests](https://github.com/ngo-binh0108/Satellite_Image_Analysis/actions/workflows/tests.yml/badge.svg)](https://github.com/ngo-binh0108/Satellite_Image_Analysis/actions/workflows/tests.yml)
+
 Desktop app for viewing and analysing satellite or aerial images stored on this computer.
 It works fully offline: images are opened from disk and analysed locally, and the app makes no
 internet connection. (The window and its analysis engine talk to each other on `127.0.0.1` only.)
