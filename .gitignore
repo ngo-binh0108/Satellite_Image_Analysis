@@ -1,0 +1,20 @@
+# Python environment and caches
+.conda-env/
+__pycache__/
+*.pyc
+.pytest_cache/
+.cache/
+
+# Build outputs
+desktop/build/
+desktop/build_vs/
+desktop/bin/
+desktop/obj/
+desktop/*.vcxproj.user
+.vs/
+dist/
+
+# Large local data (sample GeoTIFFs are regenerated with scripts/make_samples.py)
+samples/
+scripts/model_candidates/
+scripts/validation_results.json

@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+rasterio
+numpy
+scipy
+pillow
+scikit-learn
+joblib
+shapely
+pytest
+pyinstaller
+# developer scripts only (scripts/make_samples.py, scripts/validate.py):
+httpx
+pyproj
+shapely

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Satellite Image Analysis</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside id="sidebar">
+    <h1>Satellite Image Analysis</h1>
+
+    <section>
+      <h2>1. Area</h2>
+      <button id="draw" type="button">Draw area on map</button>
+      <p id="area-info" class="hint">Click the button, then drag a rectangle on the map.</p>
+    </section>
+
+    <section>
+      <h2>2. Find scenes</h2>
+      <div class="row">
+        <label>From <input id="start" type="date"></label>
+        <label>To <input id="end" type="date"></label>
+      </div>
+      <label>Max cloud cover (%) <input id="cloud" type="number" min="0" max="100" value="20"></label>
+      <button id="search" type="button" disabled>Search Sentinel-2</button>
+      <p id="search-info" class="hint"></p>
+      <ul id="scenes"></ul>
+    </section>
+
+    <section>
+      <h2>3. Layer</h2>
+      <label>Product <select id="product"></select></label>
+      <label>View
+        <select id="view">
+          <option value="a">Scene A</option>
+          <option value="b">Scene B</option>
+          <option value="swipe">Swipe: A left, B right</option>
+          <option value="change">Change (B − A)</option>
+        </select>
+      </label>
+      <label id="k-row" hidden>Classes <input id="k" type="number" min="2" max="8" value="6"></label>
+      <label id="threshold-row" hidden>Change threshold <input id="threshold" type="number" min="0.05" max="0.9" step="0.05" value="0.2"></label>
+      <label class="check"><input id="mask" type="checkbox" checked> Mask clouds and shadows</label>
+      <label>Opacity <input id="opacity" type="range" min="0" max="1" step="0.05" value="1"></label>
+      <p id="layer-info" class="hint">Pick scene A from the list to display it.</p>
+      <div id="legend"></div>
+    </section>
+
+    <section id="stats-section" hidden>
+      <h2>4. Statistics</h2>
+      <div id="stats"></div>
+      <div class="row">
+        <a id="export-tif" class="button" href="#">Download GeoTIFF</a>
+        <a id="export-png" class="button" href="#" download="layer.png">Download PNG</a>
+      </div>
+    </section>
+  </aside>
+
+  <main>
+    <div id="map"></div>
+    <div id="swipe" hidden>
+      <div id="swipe-line"></div>
+      <input id="swipe-range" type="range" min="0" max="1" step="0.005" value="0.5" aria-label="Swipe position">
+    </div>
+    <div id="busy" hidden>Loading imagery…</div>
+  </main>
+  <div id="tooltip" hidden></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
