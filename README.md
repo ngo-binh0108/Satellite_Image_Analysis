@@ -115,3 +115,7 @@ and near-infrared bands, a known pixel size, and an analysis area fine enough (a
 - Large areas are analysed at reduced resolution (1024 pixels on the long side; 2048 for detection).
   The viewer itself shows full detail when zoomed in.
 - There is no cloud masking: clouds in the image are analysed like anything else.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
